@@ -126,36 +126,10 @@ public class Activity2 extends AppCompatActivity {
         }
         populate();
 
-        /*//Add onClickListeners to buttons
-        for (int i = 0; i < choices.length; i++) {
-            if (choices[i].getText() == correctAnswer) {
-                choices[i].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        timer.cancel();
-                        Toast.makeText(Activity2.this, "Correct", Toast.LENGTH_SHORT).show();
-                        increaseScore();
-                        counter++;
-                        doAction();
-                    }
-                });
-            } else {
-                choices[i].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        timer.cancel();
-                        Toast.makeText(Activity2.this, "Incorrect", Toast.LENGTH_SHORT).show();
-                        counter++;
-                        doAction();
-                    }
-                });
-            }
-        }*/
-
         //Add "add contact" functionality
         final Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
         intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
-        intent.putExtra(ContactsContract.Intents.Insert.NAME, "Joe Bob");
+        intent.putExtra(ContactsContract.Intents.Insert.NAME, correctAnswer);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
